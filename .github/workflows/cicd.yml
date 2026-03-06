@@ -13,7 +13,7 @@ jobs:
   build:
      runs-on: ubuntu-latest
     steps:
-      - name: Build docker container
+      - name: Build docker containers
         run: echo "docker container build"
   test:
      runs-on: ubuntu-latest
@@ -23,5 +23,5 @@ jobs:
   deploy:
      runs-on: ubuntu-latest
     steps:
-      name: Deploying the app
-      run:echo "Docker compose deployed the app"
+      - name: Deploying the app
+        run: echo "Docker compose deployed the app"
