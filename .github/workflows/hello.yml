@@ -26,5 +26,4 @@ jobs:
     steps:
       - name:  show what is the version of python,docker,etc
         run:  docker --version && python --version
-      -
   
