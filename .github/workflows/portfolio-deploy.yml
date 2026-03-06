@@ -19,7 +19,7 @@ jobs:
             - name: Checkout Code
               uses: actions/checkout@v4
 
-              #methodss
+              #methodss addes
 
             - name: Setup the Github pages
               uses: actions/configure-pages@v4
@@ -27,7 +27,7 @@ jobs:
             - name: Upload static files
               uses: actions/upload-pages-artifact@v4
               with:
-                path: _site/
+                path: ./
 
             - name: Deploy to Github pages
               uses: actions/deploy-pages@v4
