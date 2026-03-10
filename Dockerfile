@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
-Run pip install -r requirements.txt
+Run pip install -r requirements.
+
+EXPOSE 80
 
 CMD ["python","app.py"]
