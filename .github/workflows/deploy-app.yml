@@ -1,24 +1,21 @@
 name: Deploy flask app
 
 on:
-  workflow_dispatch:
-
+    workflow_dispatch:
+        
 jobs:
-  deploy:
-    runs-on: self-hosted
 
-    env:
-      DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
+    deploy:
+        env:
+            DOCKERHUB_USER: ${{vars.DOCKERHUB_USER}}
+        runs-on: self-hosted
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
 
-      - name: Set up Docker Compose
-        uses: docker/setup-compose-action@v2
+            - name: Set up Docker Compose
+              uses: docker/setup-compose-action@v2
 
-      - name: Pull latest image
-        run: docker compose pull
-
-      - name: Deploy container
-        run: docker compose up -d --force-recreate
+            - name: deploy with docker compose
+              run: docker compose up -d --build
